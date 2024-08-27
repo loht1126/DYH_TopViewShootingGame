@@ -6,8 +6,27 @@ public class Projectile : MonoBehaviour
 {
     public float movespeed;
 
+
+    private void Start()
+    {
+        Invoke("killmyself", 3.0f);
+    }
     void Update()
     {
-        transform.Translate(transform.forward * movespeed * Time.deltaTime);
+        transform.Translate(Vector3.forward * movespeed * Time.deltaTime);
+    }
+
+
+    private void killmyself()
+    {
+        Destroy(gameObject);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("enemy"))
+        {
+            Destroy(other.gameObject);
+            Destroy(gameObject);
+        }
     }
 }
