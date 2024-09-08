@@ -17,10 +17,10 @@ TagManager:
   - 
   - 
   - ground
-  - 
-  - 
-  - 
-  - 
+  - player
+  - enemy
+  - bullet
+  - wall
   - 
   - 
   - 
